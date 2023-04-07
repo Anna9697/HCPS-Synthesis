@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ceb02b0-9bd3-479b-b44a-d64bfe4412c4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/LunarLander-v2-DQN.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GridWorld_HCPS_deep.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GridWorld_HPS_reinforce.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GridWorld_policies.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learner/LDBA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learner/agent_adapt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learner/agent_reinforce.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learner/model_adapt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Learner/replay_buffer_adapt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MDP_modeling.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Watch_CPS_LTL.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Watch_CPS_LTL_gridworld.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Watch_HCPS_LTL_Reinforce.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Watch_HCPS_LTL_gridworld.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Watch_HPS_LTL_Reinforce.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Watch_HPS_LTL_gridworld.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMachine-v0_LTL_local.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMachine-v0_LTL_target.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMax_LTL_local.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMax_LTL_target.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorldMax_LTL_local.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorldMax_LTL_target.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorld_LTL_local.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorld_LTL_target.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/2/Reinforce_policy_0.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/2/Reinforce_policy_1.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/GridHCPS-2/Reinforce_policy_0.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/GridHCPS-2/Reinforce_policy_1.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/GridWorld2/Reinforce_policy_0.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/GridWorld2/Reinforce_policy_1.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/HCPS-4/Reinforce_policy_0.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/HCPS-4/Reinforce_policy_1.pth" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/env/grid_world.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/env/lunar_lander.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/LunaLander.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/abstracle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/case_lunalander.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/lunaLander_settings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/plot-LunaLander-v2-DQN-688epis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/rectangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/triangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_reinforce_DQN_HCPS.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main_reinforce_HPS.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/LDBA/LTL_gridworld1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/LDBA/LTL_gridworld1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/LDBA/LTL_gridworld1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/LDBA/LTL_model6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/LDBA/LTL_model6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/LDBA/LTL_model6.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/MDP/gridWorld4-5/human_action.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/MDP/gridWorld4-5/lable_matrix.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/MDP/gridWorld4-5/machine_policy.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/MDP/gridWorld4-5/physical_matrix.npy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/MDP/gridWorld4-5/switch_action.npy" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Programs/Python/Python310/Lib/site-packages/gym/envs/box2d/lunar_lander_for_machine_p.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="1unV8bRvHVgMlYI0BZRcKQt60tR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "G:/HCPS/202105-/Code/HCPS-Synthesis - jsa",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\HCPS\202105-\Code\HCPS-Synthesis - jsa" />
+      <recent name="G:\HCPS\202105-\Code\HCPS-Synthesis - jsa\images" />
+      <recent name="G:\HCPS\202105-\Code\HCPS-Synthesis - jsa\Learner" />
+      <recent name="G:\HCPS\202105-\Code\HCPS-Synthesis\images" />
+      <recent name="G:\HCPS\202105-\Code\HCPS-Synthesis\env" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\HCPS\202105-\Code\LunarLander-v2-DQN\resources\LDBA" />
+      <recent name="G:\HCPS\202105-\Code\LunarLander-v2-DQN\dir_chk\HCPS\gridworld\lrate0.01" />
+      <recent name="G:\HCPS\202105-\Code\LunarLander-v2-DQN\dir_chk\Old" />
+      <recent name="G:\HCPS\202105-\Code\LunarLander-v2-DQN" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Watch_HPS_LTL_Reinforce">
+    <configuration name="Watch_HCPS_LTL_Reinforce" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LunarLander-v2-DQN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Watch_HCPS_LTL_Reinforce.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Watch_HPS_LTL_Reinforce" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LunarLander-v2-DQN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Watch_HPS_LTL_Reinforce.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Watch_HPS_LTL_gridworld" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LunarLander-v2-DQN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Watch_HPS_LTL_gridworld.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_reinforce_DQN_HCPS" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LunarLander-v2-DQN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_reinforce_DQN_HCPS.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_reinforce_HPS" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LunarLander-v2-DQN" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_reinforce_HPS.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Watch_HPS_LTL_Reinforce" />
+        <item itemvalue="Python.Watch_HCPS_LTL_Reinforce" />
+        <item itemvalue="Python.main_reinforce_DQN_HCPS" />
+        <item itemvalue="Python.main_reinforce_HPS" />
+        <item itemvalue="Python.Watch_HPS_LTL_gridworld" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ceb02b0-9bd3-479b-b44a-d64bfe4412c4" name="Default Changelist" comment="" />
+      <created>1625301181331</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625301181331</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
