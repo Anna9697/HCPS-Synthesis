@@ -4,8 +4,8 @@ import random
 import numpy as np
 from graphviz import Digraph
 
-class LDBA(object):
-    def __init__(self, locations, actions, epsilons, trans, finale_conditons, accept_locations, allow_e_actions):
+class LDGBA(object):
+    def __init__(self, locations, actions, epsilons, trans, finale_conditons, accept_locations, current_accepts, allow_e_actions):
         self.locations = locations
         self.actions = actions
         self.epsilons = epsilons
@@ -13,6 +13,7 @@ class LDBA(object):
         self.finale_conditons = finale_conditons
         self.accept_locations = accept_locations
         self.allow_e = allow_e_actions
+        self.current_accept = current_accepts
 
     def add_Transitions(self, trans):
         for tran in trans:
@@ -60,7 +61,7 @@ class LDBA(object):
         # # label = 'c'
 
         in_area = abs(state[0]) <= 0.2
-        in_speed = np.sqrt(state[2] * state[2] + state[3] * state[3]) <= 0.20
+        in_speed = np.sqrt(state[2] * state[2] + state[3] * state[3]) <= 0.2
         in_aspeed = abs(state[5]) <= 1.0
         # oob = abs(state[0] - 2.0 / 5) >= 1.0 or state[1] >= 1.7
         # crash = (state[6] or state[7]) and not in_speed
@@ -69,8 +70,8 @@ class LDBA(object):
 
         # test4
         # a:在范围内且平稳
-        # c:不在范围内或不平稳
-        # b:出界/坠毁/超时
+        # b:不在范围内或不平稳
+        # c:出界/坠毁/超时
         if not statement[0]:
             if in_speed and in_area and in_aspeed:
                 # if np.sqrt(state[2] * state[2] + state[3] * state[3]) < 0.2 and abs(state[4]) <= 0.5 and abs(
@@ -89,7 +90,7 @@ class LDBA(object):
                 # reward += 1000
                 # print("Success!!!!!")
             else:
-                lable = 'c'
+                lable = 'b'
 
         return lable
 
@@ -102,50 +103,42 @@ class LDBA(object):
         # lable = self.get_lable(state, statement)
         # print(temp_q, label_action)
         if not self.get_nextLocations(temp_q, label_action):
-            # print("None:", temp_q, label_action)
+            # print("None")
             return None, None, None
 
         next_q = self.get_nextLocations(temp_q, label_action)[0]
 
-        if next_q in self.accept_locations:
+        if self.get_reward_label(next_q):
             reward += 1-gammaB
             Gamma = gammaB
 
         return int(next_q), reward, Gamma
 
-    def execution_zeta(self, temp_q, label_action, zeta):
-        # next_q = temp_q
-        # lable = 'c'
-        reward = 0.0
-        # Gamma = gamma
+    def get_reward_label(self, q):
+        indeces_to_remove = []
+        for accepts in self.current_accept:
+            # print(accepts)
+            if q in accepts:
+                indeces_to_remove.append(accepts)
+                # Acc_set.remove(con)
+                self.current_accept.remove(accepts)
+                # print(Acc_set)
+                # return 1.0
+        # self.current_accept =
+        if not self.current_accept:
+            self.current_accept = copy.deepcopy(self.finale_conditons)
+            # print(self.current_accept, self.finale_conditons)
+        # print(q,indeces_to_remove)
+        if indeces_to_remove:
+            # print("True")
+            return True
+        else:
+            return False
 
-        # lable = self.get_lable(state, statement)
-        # print(temp_q, label_action)
-        if not self.get_nextLocations(temp_q, label_action):
-            # print("None:", temp_q, label_action)
-            return None, None, None
-
-        next_q = self.get_nextLocations(temp_q, label_action)[0]
-
-        if temp_q in self.accept_locations:
-            if random.random() < 1 - zeta:
-                reward = 1
-            else:
-                reward = 0
-
-        return int(next_q), reward
-
-    # def get_LDGBA_reward_label(self, now_q, Acc_set):
-    #     for con in Acc_set:
-    #         if now_q in con:
-    #             Acc_set.remove(con)
-    #             # print(Acc_set)
-    #             return 1.0
-    #
-    #     if not Acc_set:
-    #         Acc_set = copy.deepcopy(self.finale_conditons)
-    #         # print("Acc_set:",Acc_set)
-    #     return 0.0
+        # if not Acc_set:
+        #     Acc_set = copy.deepcopy(self.finale_conditons)
+            # print("Acc_set:",Acc_set)
+        # return 0.0
 
 
 
@@ -172,7 +165,7 @@ class Transition(object):
             return False
 
 
-class LDBAUtil(object):
+class LDGBAUtil(object):
     def LDBA_Util(filepath):
         with open(filepath, 'r') as json_model:
             model = json.load(json_model)
@@ -189,11 +182,13 @@ class LDBAUtil(object):
         locations = []
         finale_conditons = []
         accept_locations = []
+        current_accepts = []
 
         for acc in accept_conditions:
-            #print(accept_conditions[acc])
-            #print(condition)
+            # print(accept_conditions[acc])
+            # print(acc)
             finale_conditons.append(accept_conditions[acc])
+            current_accepts.append(accept_conditions[acc])
             for l in accept_conditions[acc]:
                 if l not in accept_locations:
                     accept_locations.append(l)
@@ -216,4 +211,4 @@ class LDBAUtil(object):
                 b_aceept = True
             locations.append(Location(l_id, l, b_init, b_aceept, 0))
         
-        return LDBA(locations, actions, epsilons, transitions, finale_conditons, accept_locations, allow_e_actions)
+        return LDGBA(locations, actions, epsilons, transitions, finale_conditons, accept_locations, current_accepts, allow_e_actions)

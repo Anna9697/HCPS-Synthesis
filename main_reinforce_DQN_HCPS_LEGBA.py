@@ -8,7 +8,7 @@ from collections import deque
 from Learner.agent_adapt import Agent
 from Learner.agent_reinforce import Reinforce
 
-from Learner.LDBA import LDBA, LDBAUtil
+from Learner.LDGBA import LDGBA, LDGBAUtil
 
 def train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num):
     controler = "human"
@@ -26,7 +26,7 @@ def train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num):
         score, temp_q, success = run_episode(agent_h, agent_c, env, LTL_model, gamma, gammaB, eps)
         if score > max_score:
             agent_h.save_models(0)
-            agent_c.save('dir_chk/HCPS-LTL/8', 'LunarLanderMax')
+            agent_c.save('dir_chk/HCPS-LTL/LDGBA', 'LunarLanderMax')
             max_score = score
 
         scores_deque.append(score)
@@ -255,12 +255,12 @@ def main(env, agent_h, agent_c, LTL_model, gamma, gammaB, nn_num):
    plt.show()
 
    agent_h.save_models(1)
-   agent_c.save('dir_chk/HCPS-LTL/8', 'LunarLanderMachine-v0')
+   agent_c.save('dir_chk/HCPS-LTL/LDGBA', 'LunarLanderMachine-v0')
 
 if __name__ == '__main__':
     LTLpath = "resources/LDBA/LTL_model6.json"
-    LTL_model = LDBAUtil.LDBA_Util(LTLpath)
-    LDBA.make_model(LTL_model, "resources/LDBA/", "LTL_model6")
+    LTL_model = LDGBAUtil.LDBA_Util(LTLpath)
+    LDGBA.make_model(LTL_model, "resources/LDBA/", "LTL_model6")
     # save_path = 'dir_chk/Reinforce_HPS/1/'
 
     nn_num = len(LTL_model.locations)
@@ -297,7 +297,7 @@ if __name__ == '__main__':
     print('threshold: ', threshold)
 
     agent_h = Reinforce(alpha=0.0001, state_dim=space_dim, action_dim=action_dim,
-                      fc1_dim=256, fc2_dim=256, ckpt_dir='dir_chk/Reinforce_HPS/HCPS-4/', gamma=0.99)
+                      fc1_dim=256, fc2_dim=256, ckpt_dir='dir_chk/Reinforce_HPS/HCPS-LDGBA/', gamma=0.99)
     agent_c = Agent(space_dim + 1, 2 + len(LTL_model.epsilons), hidden_dim, seed=0)
 
     agent_h.load_models('dir_chk/Reinforce_HPS/2/', 1)

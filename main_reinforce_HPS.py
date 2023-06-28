@@ -79,24 +79,27 @@ def run_episode(agent, env, LTL_model, gamma, gammaB):
         landed = not env.lander.awake
         statement = [done, env.game_over, landed]
 
-        # done = False
-        if env.game_over or abs(next_state[0]) >= 1.0:
-            # done = True
-            next_reward -= 100
-        if env.curr_step >= 600 and env.lander.awake:
-            # done = True
-            next_reward -= 100
-        if not env.lander.awake:
-            # done = True
-            next_reward += 100
-            print("landed!!!")
 
+
+        # done = False
+        # if env.game_over or abs(next_state[0]) >= 1.0:
+        #     # done = True
+        #     next_reward -= 100
+        # if env.curr_step >= 600 and env.lander.awake:
+        #     # done = True
+        #     next_reward -= 100
+        # if not env.lander.awake:
+        #     # done = True
+        #     next_reward += 100
+        #     print("landed!!!")
+        #
         next_q, LTL_reward, Gamma = LTL_model.execution(next_state, str(temp_q), statement, gamma, gammaB)
-        if done and landed and next_q == 1:
-            LTL_reward += 20
-        if pre_reward is not None:
-            reward += 0.1 * (1.0 * next_reward - pre_reward)
-            total_env += reward
+        # if done and landed and next_q == 1:
+        #     next_reward += 20
+        reward = get_env_reward(env, next_state, pre_reward, next_reward)
+        # if pre_reward is not None:
+        #     reward += 0.1 * (1.0 * next_reward - pre_reward)
+        total_env += reward
 
         # reward += LTL_reward
         agent.store_reward(reward)
@@ -105,7 +108,7 @@ def run_episode(agent, env, LTL_model, gamma, gammaB):
         nstate = np.append(state, temp_q)
         nnext_state = np.append(next_state, next_q)
         # agent.step(nstate, action, reward, nnext_state, done, Gamma)
-        total_reward += reward
+        total_reward += (reward + LTL_reward)
         pre_reward = next_reward
         state = next_state
         temp_q = next_q
@@ -115,6 +118,23 @@ def run_episode(agent, env, LTL_model, gamma, gammaB):
     agent.learn()
 
     return total_reward, temp_q, total_LTL, total_env
+
+def get_env_reward(env, next_state, pre_reward, next_reward):
+    reward = 0
+    if env.game_over or abs(next_state[0]) >= 1.0:
+        # done = True
+        next_reward -= 100
+    if env.curr_step >= 600 and env.lander.awake:
+        # done = True
+        next_reward -= 100
+    if not env.lander.awake:
+        # done = True
+        next_reward += 100
+        print("landed!!!")
+    if pre_reward is not None:
+        reward += 0.1 * (1.0 * next_reward - pre_reward)
+    return reward
+
 
 def main(env, agent, LTL_model, gamma, gammaB, nn_num):
    scores, avg_scores = train(agent, env, LTL_model, gamma, gammaB, nn_num)

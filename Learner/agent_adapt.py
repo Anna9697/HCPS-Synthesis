@@ -17,7 +17,7 @@ FloatTensor = torch.cuda.FloatTensor if use_cuda else torch.FloatTensor
 
 class Agent():
 
-    def __init__(self, state_size, action_size, seed):
+    def __init__(self, state_size, action_size, hidden_size, seed):
         """Initialize an Agent object.
 
         Params
@@ -32,8 +32,8 @@ class Agent():
         self.seed = random.seed(seed)
 
         # Q-Network
-        self.qnetwork_local = QNetwork(state_size, action_size, seed).to(self.device)
-        self.qnetwork_target = QNetwork(state_size, action_size, seed).to(self.device)
+        self.qnetwork_local = QNetwork(state_size, action_size, hidden_size, seed).to(self.device)
+        self.qnetwork_target = QNetwork(state_size, action_size, hidden_size, seed).to(self.device)
         self.optimizer = optim.Adam(self.qnetwork_local.parameters(), lr=LEARNING_RATE)
 
         # Replay memory
@@ -54,7 +54,7 @@ class Agent():
                 self.learn(experiences, GAMMA)
         
 
-    def get_action(self, state, eps, check_eps=True):
+    def get_action(self, state, eps, allow_e = False):
         """Returns actions for given state as per current policy.
 
         Params
@@ -70,10 +70,21 @@ class Agent():
         self.qnetwork_local.train()
 
         # Epsilon-greedy action selection
-        if random.random() > eps:
-            return np.argmax(action_values.cpu().data.numpy())
+        if allow_e == True:
+            if random.random() > eps:
+                action_index = np.argmax(action_values.cpu().data.numpy())
+                # return np.argmax(action_values.cpu().data.numpy())
+            else:
+                action_index = random.choice(np.arange(self.action_size))
+                # return random.choice(np.arange(self.action_size))
         else:
-            return random.choice(np.arange(self.action_size))
+            if random.random() > eps:
+                action_index = np.argmax(action_values.cpu().data.numpy()[:, :2])
+                # return np.argmax(action_values.cpu().data.numpy()[:, :2])
+            else:
+                action_index = random.choice(np.arange(self.action_size)[:2])
+                # return random.choice(np.arange(self.action_size)[:2])
+        return action_index
 
     def learn(self, experiences, gamma):
         """Update value parameters using given batch of experience tuples.

@@ -10,7 +10,7 @@ from Learner.agent_reinforce import Reinforce
 
 from Learner.LDBA import LDBA, LDBAUtil
 
-def train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num):
+def train(agent_h, agent_c, env, LTL_model, gamma, zeta, nn_num):
     controler = "human"
 
     scores_deque = deque(maxlen=100)
@@ -23,10 +23,10 @@ def train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num):
 
     for i_episode in range(num_episodes):
         eps = agent_c.epsilon_annealing(i_episode, max_eps_episode, min_eps)
-        score, temp_q, success = run_episode(agent_h, agent_c, env, LTL_model, gamma, gammaB, eps)
+        score, temp_q, success = run_episode(agent_h, agent_c, env, LTL_model, gamma, zeta, eps)
         if score > max_score:
             agent_h.save_models(0)
-            agent_c.save('dir_chk/HCPS-LTL/8', 'LunarLanderMax')
+            agent_c.save('dir_chk/HCPS-LTL/zeta', 'LunarLanderMax')
             max_score = score
 
         scores_deque.append(score)
@@ -44,7 +44,7 @@ def train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num):
                 format(i_episode, score, avg_score, success_rate, eps, dt // 3600, dt % 3600 // 60, dt % 60))
 
         if len(scores_deque) == scores_deque.maxlen:
-            threshold = 42
+            threshold = 30
             if np.mean(scores_deque) >= threshold:
             # if success_rate >= 0.73:
                 print('\n Environment solved in {:d} episodes!\t Average Score: {:.2f}'. \
@@ -53,7 +53,7 @@ def train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num):
 
     return scores_array, avg_scores_array  # , loss_array_plot
 
-def run_episode(agent_h, agent_c, env, LTL_model, gamma, gammaB, episode):
+def run_episode(agent_h, agent_c, env, LTL_model, gamma, zeta, episode):
     """Play an epsiode and train
 
     Args:
@@ -113,13 +113,19 @@ def run_episode(agent_h, agent_c, env, LTL_model, gamma, gammaB, episode):
         label = LTL_model.get_lable(next_state, statement)
         # label = label_action
 
-        next_q, LTL_reward, Gamma = LTL_model.execution(str(temp_q), label_action, gamma, gammaB)  # 自定义LTL自动机状态转换函数
+        next_q, LTL_reward = LTL_model.execution_zeta(str(temp_q), label_action, zeta)  # 自定义LTL自动机状态转换函数
         if done and landed and next_q == 1:
+        # if LTL_reward > 0:
+        #     done = True
             reward += 20
             # total_reward += 2
             success = 1
             print("Success!!!!!")
-        env_reward = get_env_reward(env, next_state, pre_reward, next_reward, Gamma)
+        if LTL_reward > 0:
+            reward += 10
+            done = True
+            print("Zeta!!!!!")
+        env_reward = get_env_reward(env, next_state, pre_reward, next_reward, gamma)
         reward += (LTL_reward + env_reward)
         # if pre_reward is not None:
         #     reward += 0.0001 * (Gamma * next_reward - pre_reward)
@@ -135,13 +141,19 @@ def run_episode(agent_h, agent_c, env, LTL_model, gamma, gammaB, episode):
 
         # if HorM == 1:
         #     agent_h.step(nstate, action, reward, nnext_state, done, Gamma)
-        agent_c.step(nstate, HorM, reward, nnext_state, done, Gamma)
+        agent_c.step(nstate, HorM, reward, nnext_state, done, gamma)
+
+        # if LTL_reward > 0:
+            # env.gameover = True
+            # done = True
+            # break
 
         pre_reward = next_reward
         state = next_state
         temp_q = next_q
 
         if done:
+            env.close()
             break
 
     agent_h.learn()
@@ -239,8 +251,8 @@ def get_CPS_action(state, action):
 
     return action
 
-def main(env, agent_h, agent_c, LTL_model, gamma, gammaB, nn_num):
-   scores, avg_scores = train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num)
+def main(env, agent_h, agent_c, LTL_model, gamma, zeta, nn_num):
+   scores, avg_scores = train(agent_h, agent_c, env, LTL_model, gamma, zeta, nn_num)
 
    print('length of scores: ', len(scores), ', len of avg_scores: ', len(avg_scores))
 
@@ -255,7 +267,7 @@ def main(env, agent_h, agent_c, LTL_model, gamma, gammaB, nn_num):
    plt.show()
 
    agent_h.save_models(1)
-   agent_c.save('dir_chk/HCPS-LTL/8', 'LunarLanderMachine-v0')
+   agent_c.save('dir_chk/HCPS-LTL/zeta', 'LunarLanderMachine-v0')
 
 if __name__ == '__main__':
     LTLpath = "resources/LDBA/LTL_model6.json"
@@ -276,10 +288,11 @@ if __name__ == '__main__':
     TAU = 0.005  # 1e-3   # for soft update of target parameters
     gamma = 0.999999
     gammaB = 0.999
+    zeta = 0.99
     LEARNING_RATE = 5e-5
     TARGET_UPDATE = 4
 
-    num_episodes = 30000
+    num_episodes = 1512
     print_every = 2
     hidden_dim = 64  ## 64 ## 16
     min_eps = 0.05
@@ -297,11 +310,11 @@ if __name__ == '__main__':
     print('threshold: ', threshold)
 
     agent_h = Reinforce(alpha=0.0001, state_dim=space_dim, action_dim=action_dim,
-                      fc1_dim=256, fc2_dim=256, ckpt_dir='dir_chk/Reinforce_HPS/HCPS-4/', gamma=0.99)
+                      fc1_dim=256, fc2_dim=256, ckpt_dir='dir_chk/Reinforce_HPS/HCPS-zeta/', gamma=0.99)
     agent_c = Agent(space_dim + 1, 2 + len(LTL_model.epsilons), hidden_dim, seed=0)
 
     agent_h.load_models('dir_chk/Reinforce_HPS/2/', 1)
     temp_q = 0
 
-    main(env, agent_h, agent_c, LTL_model, gamma, gammaB, nn_num)
+    main(env, agent_h, agent_c, LTL_model, gamma, zeta, nn_num)
     print()
