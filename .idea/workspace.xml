@@ -20,45 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ceb02b0-9bd3-479b-b44a-d64bfe4412c4" name="Default Changelist" comment="update">
-      <change afterPath="$PROJECT_DIR$/GridWorld_HCPS_QL.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GridWorld_HCPS_QL_LEGBA.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GridWorld_HCPS_QL_zeta.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learner/LDGBA.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learner/agent_QL.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Learner/agent_reinforce1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_reinforce_DQN_HCPS_LEGBA.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_reinforce_DQN_HCPS_zeta.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GridWorld_HCPS_deep.py" beforeDir="false" afterPath="$PROJECT_DIR$/GridWorld_HCPS_deep.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GridWorld_policies.py" beforeDir="false" afterPath="$PROJECT_DIR$/GridWorld_policies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learner/LDBA.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learner/LDBA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learner/agent_adapt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learner/agent_adapt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Learner/model_adapt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Learner/model_adapt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MDP_modeling.py" beforeDir="false" afterPath="$PROJECT_DIR$/MDP_modeling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Watch_CPS_LTL.py" beforeDir="false" afterPath="$PROJECT_DIR$/Watch_CPS_LTL.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Watch_HCPS_LTL_Reinforce.py" beforeDir="false" afterPath="$PROJECT_DIR$/Watch_HCPS_LTL_Reinforce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Watch_HPS_LTL_Reinforce.py" beforeDir="false" afterPath="$PROJECT_DIR$/Watch_HPS_LTL_Reinforce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMachine-v0_LTL_local.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMachine-v0_LTL_local.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMachine-v0_LTL_target.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMachine-v0_LTL_target.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMax_LTL_local.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMax_LTL_local.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMax_LTL_target.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/8/LunarLanderMax_LTL_target.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorldMax_LTL_local.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorldMax_LTL_local.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorldMax_LTL_target.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorldMax_LTL_target.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorld_LTL_local.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorld_LTL_local.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorld_LTL_target.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/HCPS-LTL/grid2/GridWorld_LTL_target.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GridWorld_HCPS_QL.py" beforeDir="false" afterPath="$PROJECT_DIR$/GridWorld_HCPS_QL.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GridWorld_HCPS_QL_LEGBA.py" beforeDir="false" afterPath="$PROJECT_DIR$/GridWorld_HCPS_QL_LEGBA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GridWorld_HCPS_QL_zeta.py" beforeDir="false" afterPath="$PROJECT_DIR$/GridWorld_HCPS_QL_zeta.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/GridHCPS-2/Reinforce_policy_0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/GridHCPS-2/Reinforce_policy_0.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/GridHCPS-2/Reinforce_policy_1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/GridHCPS-2/Reinforce_policy_1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/HCPS-4/Reinforce_policy_0.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/HCPS-4/Reinforce_policy_0.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/HCPS-4/Reinforce_policy_1.pth" beforeDir="false" afterPath="$PROJECT_DIR$/dir_chk/Reinforce_HPS/HCPS-4/Reinforce_policy_1.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/LunaLander.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main_reinforce_DQN_HCPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_reinforce_DQN_HCPS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_reinforce_HPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_reinforce_HPS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/LDBA/LTL_gridworld1" beforeDir="false" afterPath="$PROJECT_DIR$/resources/LDBA/LTL_gridworld1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/LDBA/LTL_gridworld1.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/LDBA/LTL_gridworld1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/LDBA/LTL_gridworld1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/LDBA/LTL_gridworld1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/LDBA/LTL_model6" beforeDir="false" afterPath="$PROJECT_DIR$/resources/LDBA/LTL_model6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/LDBA/LTL_model6.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/LDBA/LTL_model6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/LDBA/LTL_model6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/LDBA/LTL_model6.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +64,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "G:/HCPS/202105-/Code/HCPS-Synthesis - jsa - revision",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "http.proxy"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -116,7 +83,7 @@
       <recent name="G:\HCPS\202105-\Code\LunarLander-v2-DQN" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Watch_HCPS_LTL_Reinforce">
+  <component name="RunManager" selected="Python.main_reinforce_DQN_HCPS">
     <configuration name="GridWorld_HCPS_QL" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LunarLander-v2-DQN" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GridWorld_policies" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="GridWorld_HCPS_QL_zeta" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LunarLander-v2-DQN" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -171,7 +138,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GridWorld_policies.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GridWorld_HCPS_QL_zeta.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -201,7 +168,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main_reinforce_DQN_HCPS_zeta" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main_reinforce_DQN_HCPS" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LunarLander-v2-DQN" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -213,7 +180,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_reinforce_DQN_HCPS_zeta.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_reinforce_DQN_HCPS.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -224,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Watch_HCPS_LTL_Reinforce" />
-        <item itemvalue="Python.GridWorld_policies" />
-        <item itemvalue="Python.main_reinforce_DQN_HCPS_zeta" />
+        <item itemvalue="Python.main_reinforce_DQN_HCPS" />
         <item itemvalue="Python.GridWorld_HCPS_QL" />
         <item itemvalue="Python.GridWorld_HCPS_QL_LEGBA" />
+        <item itemvalue="Python.GridWorld_HCPS_QL_zeta" />
+        <item itemvalue="Python.Watch_HCPS_LTL_Reinforce" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680852971375</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1687955092205</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687955092205</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

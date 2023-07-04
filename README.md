@@ -15,7 +15,7 @@ The project was developed using Python3, and you only need to download the proje
 #### Basic Description
 A mobile robot wanders from an initial state (0, 0) in a 5 × 4 grid-world, tying to reach one of the safe absorbing
 states labelled with $a$ or $b$ while avoiding unsafe states labelled with $c$,
-which is formally specified in LTL formula as $\varphi_1 = (\opF\opG a \vee \opF\opG b) \wedge \opG\neg c$.
+which is formally specified in LTL formula as $\varphi_1 = (FG a \vee FG b) \wedge G \neg c$.
 
 <img src="images/case_grid_world.jpg" width = "370"  alt="" align=center />
 

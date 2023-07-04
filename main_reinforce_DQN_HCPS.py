@@ -88,12 +88,14 @@ def run_episode(agent_h, agent_c, env, LTL_model, gamma, gammaB, episode):
         if temp_q == 2:
             env.lander.color1 = (255, 255, 0, 1)
 
-
+        start = time.perf_counter()
         if in_critical_states(state):
             if temp_q == 0 and label in LTL_model.allow_e:
                 HorM = agent_c.get_action(nstate, episode, True)
             else:
                 HorM = agent_c.get_action(nstate, episode)
+        end = time.perf_counter()
+        print(end - start)
 
         if HorM > 1:
             label_action = LTL_model.epsilons[str(temp_q)][HorM - 2]
@@ -240,22 +242,26 @@ def get_CPS_action(state, action):
     return action
 
 def main(env, agent_h, agent_c, LTL_model, gamma, gammaB, nn_num):
-   scores, avg_scores = train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num)
+    start = time.perf_counter()
+    scores, avg_scores = train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num)
+    end = time.perf_counter()
+    runTime = end -start
+    print("Run Time:", runTime, "s")
+    print('length of scores: ', len(scores), ', len of avg_scores: ', len(avg_scores))
 
-   print('length of scores: ', len(scores), ', len of avg_scores: ', len(avg_scores))
+    fig = plt.figure()
+    # ax = fig.add_subplot(111)
+    # plt.plot(np.arange(1, len(scores) + 1), scores, label="Score")
+    plt.ylim((0, 45))
+    plt.plot(np.arange(1, len(avg_scores) + 1), avg_scores)
 
-   fig = plt.figure()
-   ax = fig.add_subplot(111)
-   plt.plot(np.arange(1, len(scores) + 1), scores, label="Score")
-   plt.plot(np.arange(1, len(avg_scores) + 1), avg_scores, label="Avg on 100 episodes")
+    plt.legend(bbox_to_anchor=(1.05, 1))
+    plt.ylabel('Avg reward on 100 episodes')
+    plt.xlabel('Episodes #')
+    plt.show()
 
-   plt.legend(bbox_to_anchor=(1.05, 1))
-   plt.ylabel('Score')
-   plt.xlabel('Episodes #')
-   plt.show()
-
-   agent_h.save_models(1)
-   agent_c.save('dir_chk/HCPS-LTL/8', 'LunarLanderMachine-v0')
+    agent_h.save_models(1)
+    agent_c.save('dir_chk/HCPS-LTL/8', 'LunarLanderMachine-v0')
 
 if __name__ == '__main__':
     LTLpath = "resources/LDBA/LTL_model6.json"

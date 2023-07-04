@@ -163,7 +163,11 @@ def get_CPS_action(state, action):
     return action
 
 def main(env, agent_h, agent_c, LTL_model, gamma, gammaB, nn_num):
+   start = time.perf_counter()
    scores, avg_scores = train(agent_h, agent_c, env, LTL_model, gamma, gammaB, nn_num)
+   end = time.perf_counter()
+   runTime = end - start
+   print("Run Time:", runTime, "s")
 
    print('length of scores: ', len(scores), ', len of avg_scores: ', len(avg_scores))
 
